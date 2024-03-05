@@ -7,7 +7,7 @@ terraform {
   }
 }
 provider "aws" {
-  region     = ap-south-1
+  region     = var.region_name
   access_key = var.access_key
   secret_key = var.secret_key
 }
@@ -22,3 +22,6 @@ resource "aws_instance" "yourec2" {
 
 variable "access_key" {}
 variable "secret_key" {}
+variable "region_name" { 
+ default = "ap-south-1"
+}
